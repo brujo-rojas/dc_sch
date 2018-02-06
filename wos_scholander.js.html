@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DC SCHO</title>
+	<style>
+		body{
+			text-align: center;
+		}
+		.button{
+			font-size: 36px;
+			color: white;
+			background: red;
+			font-weight: bold;
+			margin: 20px auto;
+			padding: 20px;
+			border-radius: 5px;
+			display: inline-block;
+			text-decoration:none;
+		}
+		img{
+			width: 80%;
+		}
+	</style>
+</head>
+<body>
+
+
+<a class="button" href='javascript:var arrayData=[],limitString=window.prompt(" ingrese fecha limite \n formato [2018-01-01]","2017-06-01"),limit=new
+Date(limitString),timeOutMS=1e3,cb=function(){var e=arrayData.map(function(e){return
+e.join()}).join("\n");download(e,"datos.csv","text/csv")},download=function(e,t,a){var
+n=document.createElement("a");a=a||"application/octet-stream",navigator.msSaveBlob?navigator.msSaveBlob(new
+Blob([e],{type:a}),t):URL&&"download"in n?(n.href=URL.createObjectURL(new
+Blob([e],{type:a})),n.setAttribute("download",t),document.body.appendChild(n),n.click(),document.body.removeChild(n)):location.href="data:application/octet-stream,"+encodeURIComponent(e)},nextPage=function(){var
+e=document.getElementById("iceform");return
+e["iceform:_idcl"].value="iceform:crvlfeSub:icePnlTbSet:0:dataScroll_Et0next",e["iceform:crvlfeSub:icePnlTbSet:0:dataScroll_Et0"].value="next",iceSubmit(e,null,event)},getElementFromTable=function(){var
+e=document.getElementById("iceform:crvlfeSub:icePnlTbSet:0:tableEt0"),t=e.rows.length,a=null,n=null;for(i=1;i
+<t
+;i++){for(var o=e.rows.item(i).cells,r=o.length,l=0;l
+<r
+;l++){o.item(l).innerHTML;0==l&&(a=(a=o.item(l).innerHTML).split("/").reverse().join("-")),1==l&&(n=o.item(l).firstChild.innerHTML)}arrayData.push([a,n])}},getData=function(e){console.log("getData"),getElementFromTable(),limit
+<new Date(arrayData[arrayData.length-1][0])?(nextPage(),setTimeout(function(){getData(e)},timeOutMS)):e()};getData(cb);
+'>
+arrastrar a marcadores
+</a>
+<br><br><br><br><br>
+
+<img src="https://i.imgur.com/K2m0rMN.gif"></img>
+
+</body>
+</html>
